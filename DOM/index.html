@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOMの練習</title>
+    </head>
+    <body>
+        <h1>DOMの練習</h1>
+        <h2 id="h2"></h2>
+        <div id="div"></div>
+        <script>
+            //idがh2の場所のタグに命を与える
+            var h2 = document.getElementById("h2");
+            //h2というオブジェクトの持っているtextContentというプロパティに「小野寺」という文字を代入している。
+            h2.textContent = "小野寺";
+            //h2というオブジェクトの持っているstyleというプロパティの持っているcolorというプロパティにredを代入した。
+            h2.style.color = "red";
+            //h2というオブジェクトの持っているstyleというプロパティの持っているbackgroundColorというプロパティにredを代入した。
+            h2.style.backgroundColor = "pink";
+            //idがdivの場所のタグに命を与える
+            var div = document.getElementById("div");
+            //idがimgというまだ作られてない新しい命を与える
+            var img = document.createElement("img");
+            //imgに情報を付加する
+            img.src = "classroom.jpg";
+            //新しく作られたimgを既存のdivに子供としてimgを追加する
+            div.appendChild(img);
+         </script>
+    </body>
+</html>

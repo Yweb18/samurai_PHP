@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+   <script>    
+     //初期設定
+     //１ドル１０８円
+     const Dollar = 108;
+     //getYenToDollarという関数名に引数numberを代入する宣言
+     const getYenToDollar = (number) => {
+         //引数numberとDollar（一ドル１０８円）を掛けたものを出力する変数
+         return number * Dollar;
+         
+     }
+    
+    //繰り返し処理
+    while(true){
+        //moneyいう変数名にpromptで「ドルから円に～」をポップアップ4
+        const money = prompt('ドルから円に換算します')
+        
+        //変数名moneyが真なら
+           if(money){
+        //ログ上にreturnと変数moneyを掛けて、円ですを追加したものを出力
+               console.log(getYenToDollar(money) + '円です');
+         
+         //変数名moneyが偽（ブランクやnull)の場合、終了
+          }else break
+         //
+    }
+    
+  </script>
+</body>
+</html>
+

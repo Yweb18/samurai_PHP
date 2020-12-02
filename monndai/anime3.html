@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+　　 <style>
+　　 
+    #dialog {
+      width: 250px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid #aaa;
+      box-shadow: 2px 2px 4px #888;
+    }
+  </style>
+  </head>
+<body>
+   <form id="dialog" name="dialog">
+      <p>ボタンをクリックしてください</p>
+      <input type="button" name="yes" value="はい" />
+      <input type="button" name="no" value="いいえ" />
+      <input type="button" name="cancel" value="キャンセル" />
+    </form>
+    
+    <script>
+    //bodyのform要素を取得する
+    const form = document.forms.dialog;
+　　//formタグのname属性がyesなら、イベント登録する
+    form.yes.addEventListener("click", () => {
+        //「はい」がクリックされましたがコンソールログに出力されるイベント登録
+      console.log("「はい」がクリックされました");
+    });
+　　
+　　//formタグのname属性がnoなら、イベント登録する　　
+    form.no.addEventListener("click", () => {
+   //「いいえ」がクリックされました"がコンソールログに7出力されるイベント登録
+      console.log("「いいえ」がクリックされました");
+    });
+　　
+　　//formタグのname属性がcanselなら、イベント登録する
+    form.cancel.addEventListener("click", () => {
+        //「キャンセル」がクリックされました"がコンソールログに7出力されるイベント登録
+     console.log("「キャンセル」がクリックされました");
+    });
+    </script>
+</body>
+</html>
+

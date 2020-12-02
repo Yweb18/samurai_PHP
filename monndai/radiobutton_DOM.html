@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+    <form name="myForm">
+ <!--input = type"radio" はラジオボタンを選択する表示になる　-->
+    <input type="radio" name="area" value="tokyo" />東京都
+    <input type="radio" name="area" value="aichi" />愛知県
+    <input type="radio" name="area" value="osaka" />大阪府
+  </form>
+
+  <button id="btn">実行</button>
+  
+  <script>
+  //htmlのid=btnにgetElementByidで新しく変数btnを代入
+ const btn = document.getElementById('btn');
+ //新しく作った変数btnにクリックするとイベント登録されるメソッドを付加
+ btn.addEventListener('click',() => {
+   //htmlのbodyのformとmyFormで選択してもらった情報を変数formに代入
+   const form = document.forms.myForm;
+   //上のform情報をコンソールログに出力
+   console.log(form.area.value);
+ });
+    
+  </script>
+  
+</body>
+</html>
+

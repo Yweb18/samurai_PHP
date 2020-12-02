@@ -1,0 +1,50 @@
+MYSQLサーバの起動
+sudo service mysqld start
+
+MYSQLにログイン
+mysql -u root
+
+DB作成
+create database phpapps;
+
+DB一覧表示
+show databases;
+
+使用するDBを指定
+use phpapps;
+
+テーブル作成(personsというテーブル作成）
+
+CREATE TABLE persons(
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ name VARCHAR(30),
+ age INT
+ );
+
+テーブル一覧表示
+
+show tables;
+
+データを追加（personテーブルのnameとageカラムにデータ追加）
+INSERT INTO persons(name,age) VALUES("John",30),("Paul",28),("George",27),("Ringo",26);
+
+テーブルの中身を表示
+select * from persons;
+
+新規ユーザ作成（ユーザ名joytas追加）
+CREATE USER 'joytas'@'localhost' IDENTIFIED BY '12345';
+
+DBに使用権限付与（joytasユーザがphpappsの使用権原付加）
+GRANT ALL PRIVILEGES ON phpapps.* TO 'joytas'@'localhost';
+
+MYSQLをログアウト
+exit;
+
+MYSQLに新しいユーザ（joytas）でログイン
+mysql -u joytas -p
+
+CRUD(クラッド)4操作 DBの基本4操作
+CREATELデータ作成　MYSQL:insert
+READ 読む　MYSQL:select
+UPDATE 更新 MYSQL:update
+DELETE　削除 MYSQL:delete

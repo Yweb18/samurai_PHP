@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+   <script>    
+   //最初のクラス初期設定
+   class Animal {
+   //名前と年齢が入ったプロパティを記載している
+  constructor(name, age) {
+     this.name = name;
+     this.age = age;
+  }
+}
+    //Animalクラスをインスタンス化し、catというオブジェクトを作成
+    class cat extends Animal {
+        //name,ageをイ          ンスタンス化し、typeプロパティを追加
+        constructor(name,age,type){
+            
+            //name,ageにsuperでアクセス権限を充てる
+            super(name,age);
+            //catオブジェクトのtypeプロパティを追加（21行目と関連）
+            this.type = type;
+        }
+     
+     //speakという文字列を出力するメソッドを作成
+     speak() {
+         //19行目のcatクラスの名前＆にゃーん泣きと出力されるメソッド作成
+         console.log(this.name + 'が「にゃーん」と泣きました！');
+     }
+     }
+
+     
+    //19行目でインスタンス化したcatの値（たまとか1歳とか）をCat(catでない)に代入
+  
+  
+    const Cat = new cat('たま','1','シャム') ;
+  
+     Cat.speak();
+  
+    
+  </script>
+</body>
+</html>
+

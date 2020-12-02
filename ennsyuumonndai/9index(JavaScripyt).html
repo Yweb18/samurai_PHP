@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+    <form name="myForm">
+    <label>名前：<input type="text" name="name"></label>
+    
+    <br>
+    
+    <label>メールアドレス：<input type="text" name="email"></label>
+    
+    <br>
+    
+    <label>年齢：</label>
+     <input type="radio" name="age" value="20代" />20代
+    <input type="radio" name="age" value="30代" />30代
+    <input type="radio" name="age" value="40代" />40代
+    <input type="radio" name="age" value="50代" />50代
+    
+    <br><br>
+    
+    <label>普段使っているスマホは？</label><br/>
+    <input type="checkbox" name="sumaho" value="iphone" />iphone
+    <input type="checkbox" name="sumaho" value="android" />Android
+    <input type="checkbox" name="sumaho" value="flip-phone" />ガラケー
+    <input type="checkbox" name="sumaho" value="other" />その他
+  </form>
+  
+  <br/>
+
+  <button id="btn">実行</button>
+
+  <script>
+      // ここにJavaScriptを記述する
+      const btn = document.getElementById('btn');
+　　　//変数btnにクリックしたらイベント登録し実行するDOM動作を歳入
+　　　btn.addEventListener('click', () => {
+　　　  //forms=9行目～17行目　全てのformタグ。そして中のmyformの情報を変数formに代入
+      const form = document.forms.myForm;
+      
+      //formタグのnameやemailとかのvalue(フォームから送信された情報)をコンソールログに出力
+      console.log(form.name.value);//名前の取得
+      console.log(form.email.value);//メールアドレスの取得
+      console.log(form.age.value);//年齢の取得
+      
+      
+      //スマホ種類の取得
+      //チェックされた数だけ配列から一行ずつ表示するメソッド
+      form.sumaho.forEach(item => {
+        
+　　　//チェックされた数だけコンソールログに出力
+        if(item.checked) console.log(item.value);
+
+    })
+});
+  </script>
+  
+</body>
+</html>
+

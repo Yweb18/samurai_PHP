@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+    <form name="myForm">
+    <label>利用したことのあるOSを選択してください</label><br/>
+    <!-- input type = "checkbox"はチェックボックス  name属性は識別用の名前　valueは送信されるデータ。ボタンのラベル -->
+    <input type="checkbox" name="os" value="windows" />Windows
+    <input type="checkbox" name="os" value="macos" />Mac OS
+    <input type="checkbox" name="os" value="linux" />Linux
+    <input type="checkbox" name="os" value="ios" />iOS
+    <input type="checkbox" name="os" value="android" />Android
+  </form>
+
+  <button id="btn">実行</button>
+
+  <script>
+      // ここにJavaScriptを記述する
+      const btn = document.getElementById('btn');
+　　　//変数btnにクリックしたらイベント登録し実行するDOM動作を歳入
+　　　btn.addEventListener('click', () => {
+　　　  //forms=9行目～17行目　全てのformタグ。そして中のmyformの情報を変数formに代入
+      const form = document.forms.myForm;
+      
+      //チェックされた数だけ配列から一行ずつ表示するメソッド
+      form.os.forEach(item => {
+        
+　　　//チェックされた数だけコンソールログに出力
+        if(item.checked) console.log(item.value);
+
+    })
+});
+  </script>
+  
+</body>
+</html>
+

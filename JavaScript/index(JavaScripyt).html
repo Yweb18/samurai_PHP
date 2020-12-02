@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+　　 <style>
+　　
+  </style>
+  </head>
+<body>
+    <h1>JavaScript関連のリポジストリ総数 by GitHub</h1>
+  
+  <button id="btn">更新</button>
+  <div id="result"<div>
+    
+    <script>
+    //変数名urlに参照したいurlを記載し、代入
+    const url = 'https://api.github.com/search/repositories?q=javascript';
+    //変数名btnにDOM記載。「btn」idに新しくbtnという箱を与える変数を代入。
+    const btn = document.getElementById('btn');
+    //変数名btnにDOM記載。「result」idに新しくresultという箱を与える変数を代入。
+    const result = document.getElementById('result');
+    
+    
+    
+    // 画面に出力
+    //アロー関数でcreateResult
+    const createResult = item => {
+    //DOMで存在しないh2タグにJavaScpipt上でh2という箱を与える
+    const h2 = document.createElement('h2');
+
+    //29行目で出来上がった箱に、テキストを表示「リボジストリは～」
+    //item.total_countは27行目のitemからのcreateResultからの45行目のcreateResultに紐づいて情報をもらう
+    h2.textContent = 'リポジストリの総数は、' + item.total_count + '件です！';
+    //29行目で作成したh2箱にその結果id=resultを追加する
+    result.appendChild(h2);
+    }
+
+    //クリックするとbtn要素にイベント登録される
+    btn.addEventListener('click', () => {
+        //result「id」の結果を、削除「空文字」にする
+        result.innerHTML = '';
+        
+        //非同期処理を「url」idに実行する
+        fetch(url)
+        //dataをdata.jsonとして取得する
+        .then(data => data.json())
+        //dataを27行目のcreateResultとして取得する
+        .then(data => createResult(data))
+        
+    })
+    
+    
+
+    
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+　　 <style>
+    .screenBlue { 
+        height: 100vh;
+        color: #fff;
+        font-size: 5em;
+        text-align: center;
+        background-color: #88f;
+    }
+
+    .screenRed {
+      height: 100vh;
+      color: #fff;
+      font-size: 5em;
+      text-align: center;
+      background-color: #f88;
+    }
+    
+      .pagetop {
+      display: none;
+
+      padding: 40px 10px;
+      background-color: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 50%;
+
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
+  </head>
+<body>
+    <div class="screenBlue">ここがトップページです</div>
+    <div class="screenRed">2ページ目</div>
+    <div class="screenBlue">3ページ目</div>
+    <div class="screenRed">4ページ目</div>
+    <div class="screenBlue">5ページ目</div>
+    <!-- リンクを設定-->
+    <a class="pagetop" id="top" href=”#”>TOPに戻る</a>
+    
+    <script>
+        //JavaScriptを記述する場所
+        //getElementById()の引数にリンク要素のID属性値を指定して、HTML要素を取得
+         const topLink = document.getElementById("top");
+         //画面をスクロールするたびにイベントが発生します。
+         window.addEventListener("scroll", () => {
+             //イベント内でdocument.scrollingElement.scrollTopプロパティを
+             //使うことで毎回スクロール量を計算できる
+          const scrollValue = document.scrollingElement.scrollTop;
+            //scrollVallueが300vhを超えたら
+          if (scrollValue >= 300) {
+            //50行目のtopLinkのDOMを実行（ディスプレイにtopページリンクが出現する）
+          topLink.style.display = "inline";
+　　　　　　//300以下なら
+           } else if (scrollValue < 300) {
+　　　　　　//画面にtop的なの表示させない
+          topLink.style.display = "none";
+
+           }
+         });
+    </script>
+</body>
+</html>
+

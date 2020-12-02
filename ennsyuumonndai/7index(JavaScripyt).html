@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+   <script>    
+    //変数名「user_name」を作り、そこにpromptで「名前を～」をポップアップする命令をconst変数で代入
+    const user_name = prompt('名前を入力してください');
+    //上と同様に変数名「user_tell」を作り、「電話番号～」
+    const user_tell = prompt('電話番号を入力してくだい');
+    
+    //オブジェクトの初期化処理。「user]というオブジェクト作成
+    const user = {}
+    
+    //上から二つの変数名で、入力してもらった情報を
+    //紐づける設定を上のオブジェクト「user」に組み込む
+    // user.任意のキー値 = 入力値(名前)を代入;　これで文字列のみOK
+　　// user.任意のキー値 = 入力値(電話番号)を代入;　これで数字のみOK
+    user.name = user_name;
+    user.tell = user_tell;
+    
+    //上3行の情報（オブジェクト「user」）をconsoleに出力する
+    console.log(user);
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+  <!--複数行分のテキスト入力欄  入力欄の幅=50 高さ=7 -->
+   <textarea id="text" cols="50" rows="7"></textarea>
+   
+   <p id="count">0文字</p>
+   
+    <script>
+        //html上のtextというidから、新しくJavaScpipt上でtextという箱を作る
+        const text = document.getElementById("text");
+        //html上のcountというidから、新しくJavaScpipt上でcountという箱を作る
+        const count = document.getElementById("count");
+        
+        //新しく作ったtextでイベント処理を行う。
+        //keyup=キーを押して離した瞬間に毎回イベントが実行されるイベントの種類。1文字入力するたびに文字数をカウントして出力できるようになります。
+        text.addEventListener("keyup",() => {
+          
+          //テキストエリアの文字列を取得する
+          //valueプロパティで入力してもらった文字列を変数名inputTextに反映する。
+          //.replace();メソッドで直前にあるプロパティの情報を置き換える（改行、スペースを空文字としてみなす置き換え）
+          const inputText = text.value.replace(/\n|\s/g,"");
+          
+          //文字数を取得＆出力する
+          //inputtextで定義した変数inputTextの文字列の長さをcount箱の
+          //textContentプロパティで文字列の出力をする
+          count.textContent = inputText.length + "文字";
+          
+          
+          
+          
+        }); 
+        
+        
+        </script>
+  
+</body>
+</html>
+

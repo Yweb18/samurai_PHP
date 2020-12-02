@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプルデモ</title>
+
+  </head>
+<body>
+    <form name="myForm">
+
+<!--input type="text"でテキストのみ入力 もしnumberだと数字のみ -->
+    <input type="text" name="myText" />
+
+  </form>
+
+  <button id="btn">カウント</button>
+  <script>
+  //変数名btnにhtmlのid=btnを代入する
+    const btn = document.getElementById('btn');
+    //17行で追加されたbtn要素に「クリック」をするとイベントが登録される
+    btn.addEventListener("click",() => {
+       // 入力された文字列を取得する
+      const value = document.forms.myForm.myText.value;
+      // 文字数を出力する
+      console.log(value.length + "文字");
+    });
+    
+    
+  </script>
+  
+</body>
+</html>
+
